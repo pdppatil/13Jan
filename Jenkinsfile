@@ -17,11 +17,9 @@ pipeline {
             }
         }
         stage('Push Image') { 
-            steps {
-                
-                withCredentials([usernameColonPassword(credentialsId: 'docker', variable: 'docker_test')]) {
-                    bat "docker login -u ${docker_test} -p ${docker_test}"
-    
+             steps {
+                withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
+                    bat "docker login -u pdppatil -p ${dockerHubPwd}"
 }
                 bat "docker push pdppatil/13jan:1.0"
             }
