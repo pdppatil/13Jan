@@ -1,16 +1,17 @@
-node{
-stages{
-stage('Clean'){
-step{
+node {
+stages {
+stage ('Clean') {
+steps {
 bat "mvn clean"
 }
 }
 
-stage('package'){
-step{
+stage ('package') {
+steps {
 bat "mvn package"
 }
 }
 }
 
 }
+
