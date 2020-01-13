@@ -1,17 +1,11 @@
-node {
-stages {
-stage('Clean') {
-steps {
-bat "mvn clean"
+pipeline {
+    agent any 
+    stages {
+        stage('Package') { 
+            steps {
+                bat "mvn clean package"
+            }
+        }
+      
+    }
 }
-}
-
-stage('package') {
-steps {
-bat "mvn package"
-}
-}
-}
-
-}
-
