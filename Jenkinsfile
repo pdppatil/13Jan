@@ -5,11 +5,11 @@ pipeline {
             steps {
                 bat "mvn clean"
             }
+        }
             stage('Package') { 
             steps {
                 bat "mvn package"
             }
         }
-      
     }
 }
